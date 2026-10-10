@@ -72,7 +72,7 @@ MLOps Course Final Project – Group 18 · IE 7374 – Northeastern University<b
 </p>
 <p align="center">
   <a href="https://www.linkedin.com/posts/shivakumar-hassan-lokesh-8b65ab365_mlops-northeasternuniversity-googlecambridge-ugcPost-7406438397210382336-co-q/">
-    <img src="https://img.shields.io/badge/LinkedIn-See%20the%20Presentation-0A66C2?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn Post">
+    <img src="https://img.shields.io/badge/LinkedIn-Photos%20from%20the%20Expo-0A66C2?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn Post">
   </a>
 </p>
 
