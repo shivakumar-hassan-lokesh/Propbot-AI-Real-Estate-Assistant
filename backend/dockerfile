@@ -1,0 +1,35 @@
+FROM python:3.11-slim
+
+WORKDIR /app
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    postgresql-client \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copy and install requirements
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Pre-download model
+RUN python -c "from sentence_transformers import SentenceTransformer; \
+    print('📦 Downloading model...'); \
+    SentenceTransformer('all-MiniLM-L6-v2'); \
+    print('✅ Model cached!')"
+
+# Copy application code
+COPY . .
+
+# Create chroma_data directory (data will be pulled from DVC or cloud storage)
+RUN mkdir -p /app/chroma_data
+
+EXPOSE 8080
+
+ENV PORT=8080
+ENV PYTHONUNBUFFERED=1
+ENV CHROMA_PATH=/app/chroma_data
+ENV TRANSFORMERS_CACHE=/app/.cache
+
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8080"]

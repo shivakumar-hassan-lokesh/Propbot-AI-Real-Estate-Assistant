@@ -1,0 +1,45 @@
+name: Deploy PropBot to GCP Cloud Run
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+env:
+  PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
+  REGION: us-central1
+
+jobs:
+  deploy-backend:
+    name: Deploy Backend
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      
+      - name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v1
+        with:
+          credentials_json: ${{ secrets.GCP_SA_KEY }}
+      
+      - name: Set up Cloud SDK
+        uses: google-github-actions/setup-gcloud@v1
+      
+      - name: Deploy Backend to Cloud Run
+        run: |
+          gcloud run deploy propbot-backend \
+            --source ./backend \
+            --platform managed \
+            --region $REGION \
+            --allow-unauthenticated \
+            --memory 4Gi \
+            --cpu 2 \
+            --timeout 600 \
+            --set-env-vars OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }},GCS_BUCKET_NAME=${{ secrets.GCS_BUCKET_NAME }}
+      
+      - name: Get Backend URL
+        run: |
+          BACKEND_URL=$(gcloud run services describe propbot-backend --region=$REGION --format='value(status.url)')
+          echo "Backend deployed at: $BACKEND_URL"
