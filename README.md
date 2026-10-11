@@ -26,7 +26,7 @@ MLOps Course Final Project – Group 18 · IE 7374 – Northeastern University<b
 
 ---
 
-## 📑 Table of Contents
+## Table of Contents
 
 - [Team Members](#-team-members)
 - [Demo](#-demo)
@@ -51,7 +51,7 @@ MLOps Course Final Project – Group 18 · IE 7374 – Northeastern University<b
 
 ---
 
-## 👥 Team Members
+## Team Members
 
 - Shivakumar Hassan Lokesh
 - Nishchay Linge Gowda
@@ -78,7 +78,7 @@ MLOps Course Final Project – Group 18 · IE 7374 – Northeastern University<b
 
 ---
 
-## 📖 Overview
+## Overview
 
 **PropBot – Boston Real Estate Chatbot with MLOps Pipeline**
 
@@ -86,7 +86,7 @@ PropBot is an intelligent real estate chatbot powered by GPT-4o-mini and RAG (Re
 
 ---
 
-## 🎯 Features
+## Features
 
 ### Core Functionality
 
@@ -112,7 +112,7 @@ PropBot is an intelligent real estate chatbot powered by GPT-4o-mini and RAG (Re
 
 ---
 
-## 🏗️ Architecture
+## Architecture
 
 ```text
 ┌─────────────┐         ┌──────────────┐         ┌─────────────┐
@@ -128,7 +128,7 @@ PropBot is an intelligent real estate chatbot powered by GPT-4o-mini and RAG (Re
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```text
 project_mlops/
@@ -164,7 +164,7 @@ project_mlops/
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -233,7 +233,7 @@ project_mlops/
 
 ---
 
-## 🧪 Testing
+## Testing
 
 **Run Unit Tests**
 
@@ -264,7 +264,7 @@ curl -X POST http://localhost:8080/chat \
 
 ---
 
-## 📊 Monitoring & MLOps
+## Monitoring & MLOps
 
 | Metrics Collection | Drift Detection | Automated Retraining |
 |---|---|---|
@@ -293,7 +293,7 @@ The pipeline executes:
 
 ---
 
-## 🔄 CI/CD Pipeline
+## CI/CD Pipeline
 
 ### GitHub Actions Workflow
 
@@ -331,7 +331,7 @@ if: github.ref == 'refs/heads/main'
 
 ---
 
-## 🌐 Deployment
+## Deployment
 
 ### Google Cloud Run Deployment
 
@@ -402,7 +402,7 @@ dvc push
 
 ---
 
-## 🔧 API Endpoints
+## API Endpoints
 
 | Endpoint | Method | Path | Body |
 |---|---|---|---|
@@ -414,7 +414,7 @@ dvc push
 
 ---
 
-## 🛠️ Technologies
+## Technologies
 
 | Category | Technologies |
 |---|---|
@@ -425,7 +425,7 @@ dvc push
 
 ---
 
-## 📝 Environment Variables
+## Environment Variables
 
 **Backend**
 
@@ -444,7 +444,7 @@ BACKEND_API_URL=http://localhost:8080
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feature/amazing-feature`)
@@ -454,7 +454,7 @@ BACKEND_API_URL=http://localhost:8080
 
 ---
 
-## ⚠️ Known Issues & Limitations
+## Known Issues & Limitations
 
 | Issue | Details |
 |---|---|
@@ -464,7 +464,7 @@ BACKEND_API_URL=http://localhost:8080
 
 ---
 
-## 🔮 Future Improvements
+## Future Improvements
 
 1. Implement real-time data streaming
 2. Add more sophisticated bias mitigation techniques
@@ -474,14 +474,14 @@ BACKEND_API_URL=http://localhost:8080
 
 ---
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - Boston Open Data for property datasets
 - OpenAI for GPT-4o-mini API
 
 ---
 
-## 📄 License
+## License
 
 This project is part of an MLOps course submission.
 
